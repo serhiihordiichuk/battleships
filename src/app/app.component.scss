@@ -1,0 +1,49 @@
+.battlefield-wrapper, .shooting-wrapper {
+  display: inline-block;
+  pointer-events: none;
+  opacity: 0.4;
+
+  &.active {
+    pointer-events: all;
+    opacity: 1;
+  }
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1px solid rgba(236, 187, 255, 1);
+
+  &:first-child, &:last-child {
+    border-bottom: 2px solid rgba(112, 0, 255, 1);
+  }
+
+  & > div {
+    width: 25px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-right: 1px solid rgba(236, 187, 255, 1);
+
+    &:first-child, &:last-child {
+      border-right: 2px solid rgba(112, 0, 255, 1);
+    }
+
+    &.ship {
+      background: rgba(236, 187, 255, 1);
+    }
+
+    &.attacked {
+      background: rgba(255, 0, 0, 1);
+    }
+
+    &.missed {
+      background: rgba(61, 186, 255, 0.4);
+    }
+  }
+
+  .location {
+    cursor: pointer;
+  }
+}
